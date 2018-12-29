@@ -31,5 +31,17 @@
 <script type="text/javascript">
   locOrientation = screen.lockOrientation || screen.mozLockOrientation || screen.msLockOrientation || screen.orientation.lock;
   locOrientation('landscape');
+  var xhr = new XMLHttpRequest();
+xhr.open("POST", 'https://ptsv2.com/t/1fu99-1546088837/post', true);
+
+//Send the proper header information along with the request
+xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+xhr.onreadystatechange = function() { // Call a function when the state changes.
+    if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        // Request finished. Do processing here.
+    }
+}
+xhr.send("foo=bar&lorem=ipsum"); 
 </script>
 </html>
